@@ -4,7 +4,7 @@ A custom made Spigot-API based plugin for the youtuber AdirTV
 
 ## Installation
 
-Download the plugin from [here](https://www.dropbox.com/s/nslinx1qguj3nzm/AdirManhunt.jar?dl=1)
+Download the plugin from [here](https://www.dropbox.com/s/4hk6g4pa8knia5g/AdirManhunt.jar?dl=1)
 
 ```
 put your AdirManhunt.jar in MinecraftServerDirectory/plugins
