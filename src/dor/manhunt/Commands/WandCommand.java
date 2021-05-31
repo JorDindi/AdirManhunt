@@ -113,7 +113,7 @@ public class WandCommand implements CommandExecutor, Listener{
 		
 		if(ChatColor.stripColor(e.getCurrentItem().getItemMeta().getDisplayName()).equalsIgnoreCase("שבי השרביט")) {
 			Inventory pInv = player.getInventory();
-			player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1, 100);
+			player.playSound(player.getLocation(), Sound.BLOCK_BEEHIVE_EXIT, 1, 1f);
 			pInv.addItem(ItemManager.wand);
 			e.setCancelled(true);
 			player.sendMessage("§6§lעכשיו אני בלתי מנוצח! מוחעחעחעחע!");
@@ -121,6 +121,7 @@ public class WandCommand implements CommandExecutor, Listener{
 		}
 		
 		if(ChatColor.stripColor(e.getCurrentItem().getItemMeta().getDisplayName()).equalsIgnoreCase("תעשו סאב לאדיר!")) {
+			player.playSound(player.getLocation(),Sound.ENTITY_VILLAGER_NO, 1, 1f);
 			e.setCancelled(true);
 		}
 	}

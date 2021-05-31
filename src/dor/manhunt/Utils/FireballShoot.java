@@ -9,10 +9,12 @@ import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.Vector;
 
@@ -36,12 +38,12 @@ public class FireballShoot implements Listener {
 				for (Player p : fireballShooter.keySet()) {
 					Entity fireball = fireballShooter.get(p);
 					if(fireball.isDead() || p.getLocation().distance(fireball.getLocation()) > 60) {
+						fireball.getWorld().createExplosion(fireball.getLocation(), 10.0f);					
 						fireball.remove();
 						fireballShooter.remove(p);
 						return;
 					}
 					Vector vector = p.getLocation().getDirection(); // B - A = DISTANCE
-					
 					fireball.setVelocity(vector.multiply(2)); //SPEED ADJUSMENT
 				}
 				
@@ -80,6 +82,17 @@ public class FireballShoot implements Listener {
 			}
 			
 		}
+	
+	@EventHandler
+	public void onFireballImpact(EntityExplodeEvent e) {
+		Entity fireball = e.getEntity();
+		
+		if(fireball instanceof Fireball) {
+			((Fireball) fireball).setIsIncendiary(false);
+			((Fireball) fireball).setYield(0);
+			e.setCancelled(true);
+		}
+	}
 		
 	}
 	
