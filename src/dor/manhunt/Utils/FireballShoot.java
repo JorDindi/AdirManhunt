@@ -61,7 +61,8 @@ public class FireballShoot implements Listener {
 		
 		if(e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK) {	
 			if(e.getItem() == null) return;
-			if(!(e.getItem().getItemMeta().getCustomModelData() == 3131)) return;
+			if(!e.getItem().getItemMeta().hasCustomModelData()) return;
+			
 			if(cooldown.containsKey(player.getName())) {
 				if(cooldown.get(player.getName()) > (System.currentTimeMillis())) {
 					long timeLeft = (cooldown.get(player.getName()) - System.currentTimeMillis()) / 1000;
