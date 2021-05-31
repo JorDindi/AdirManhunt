@@ -28,7 +28,7 @@ public class Main extends JavaPlugin implements Listener{
 	}
 	
 	public void registerCommands() {
-		getCommand("wand").setExecutor(new WandCommand(this));
+		getCommand("gun").setExecutor(new WandCommand(this));
 	}
 
 	

@@ -15,9 +15,9 @@ public class ItemManager {
 		ItemStack item = new ItemStack(Material.STICK);
 		ItemMeta wandMeta = item.getItemMeta();
 		
-		wandMeta.setDisplayName("§6§lשבי השרביט");
+		wandMeta.setDisplayName("§6§lהמשגר");
 		ArrayList<String> lore = new ArrayList<>();
-		lore.add("§bהשבריט יורה כדורי אש שאפשר לכוון לאן הם הולכים!");
+		lore.add("§bאפשר לכוון את הטיל באוויר!");
 		wandMeta.setLore(lore);
 		wandMeta.setCustomModelData(3131);
 		item.setItemMeta(wandMeta);

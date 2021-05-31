@@ -49,14 +49,13 @@ public class WandCommand implements CommandExecutor, Listener{
 	
 	
 	public void openGUI(Player player) {
-		Inventory inv = Bukkit.createInventory(null, 27, "§c§lאוו... השרביט הסודית שלי!");
+		Inventory inv = Bukkit.createInventory(null, 27, "§c§lאוו... הנשק הסודי שלי!");
 		ItemStack item = new ItemStack(Material.STICK);
 		ItemMeta meta = item.getItemMeta();
 		
-		meta.setDisplayName("§6§lשבי השרביט");
+		meta.setDisplayName("§6§lהמשגר");
 		List<String> lore = new ArrayList<String>();
-		lore.add("");
-		lore.add("§bשבי השרביט החזק ביותר!");
+		lore.add("§bהחזק ביותר!");
 		meta.setLore(lore);
 		meta.setCustomModelData(3131);
 		item.setItemMeta(meta);
@@ -104,14 +103,14 @@ public class WandCommand implements CommandExecutor, Listener{
 	@EventHandler
 	public void onClick(InventoryClickEvent e) {
 		
-		if(!ChatColor.stripColor(e.getView().getTitle().toString()).equalsIgnoreCase("אוו... השרביט הסודית שלי!")) return;
+		if(!ChatColor.stripColor(e.getView().getTitle().toString()).equalsIgnoreCase("אוו... הנשק הסודי שלי!")) return;
 		if(e.getCurrentItem() == null) return;
 		if(e.getCurrentItem().getItemMeta() == null) return;
 		if(e.getCurrentItem().getItemMeta().getDisplayName() == null) return;
 		
 		Player player = (Player) e.getWhoClicked();
 		
-		if(ChatColor.stripColor(e.getCurrentItem().getItemMeta().getDisplayName()).equalsIgnoreCase("שבי השרביט")) {
+		if(ChatColor.stripColor(e.getCurrentItem().getItemMeta().getDisplayName()).equalsIgnoreCase("המשגר")) {
 			Inventory pInv = player.getInventory();
 			player.playSound(player.getLocation(), Sound.BLOCK_BEEHIVE_EXIT, 1, 1f);
 			pInv.addItem(ItemManager.wand);

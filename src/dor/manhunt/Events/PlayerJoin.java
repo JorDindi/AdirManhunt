@@ -18,7 +18,7 @@ public class PlayerJoin implements Listener{
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		Player player = e.getPlayer();
-		player.setResourcePack("https://www.dropbox.com/sh/i13ss67tbf1blxl/AADiPuVLFCN51uLeArc9x5K9a?dl=1");
+		player.setResourcePack("https://www.dropbox.com/sh/84zmrg3qmn5k4d2/AADlMjtGmswfpPtpEe7LP73Ga?dl=1");
 	}
 
 }

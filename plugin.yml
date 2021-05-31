@@ -4,4 +4,4 @@ version: 1.0
 author: Dor Yahav
 api-version: 1.16
 commands:
-  wand:
+  gun:
