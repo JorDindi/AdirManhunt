@@ -41,7 +41,12 @@ public class WandCommand implements CommandExecutor, Listener{
 		
 		Player player = (Player) sender;
 		
-		openGUI(player);
+		if(player.isOp()) {
+			openGUI(player);
+			return false;
+		}else {
+			player.sendMessage(ChatColor.DARK_RED + "אין לך הרשאות!");
+		}
 		
 		
 		return false;
